@@ -43,8 +43,8 @@ public class BasePage {
         element.click();
     }
     BaseTest baseTest = new BaseTest();
-    public void click(WebElement element,String log) throws Exception {
-        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(30));
+    public void click(WebElement element,String log, long wait) throws Exception {
+        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(wait));
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
 
