@@ -22,10 +22,10 @@ public class PolovniAutomobili extends BaseTest{
     }
 
     @Test
-    @Parameters({"env"})
+    @Parameters({"env","wait"})
     public void test1() throws Exception {
         openApp("PROD");
         HomePagePF homePagePF = new HomePagePF(driver);
-        homePagePF.searchVehicles("Alfa Romeo","145");
+        homePagePF.searchVehicles("Alfa Romeo","145",30);
     }
 }

@@ -20,23 +20,23 @@ public class HomePagePF extends BasePage{
     WebElement models;
     @FindBy(css="[name='submit_1']")
     WebElement searchButton;
-    public void selectBrand (String brand) throws Exception {
+    public void selectBrand (String brand, long wait) throws Exception {
         click(brands);
-        click(driver.findElement(By.xpath("//label[text()='"+brand+"']"))," Car brand clicked: "+brand);
+        click(driver.findElement(By.xpath("//label[text()='"+brand+"']"))," Car brand clicked: "+brand,wait);
     }
 
-    public void selectModel (String model) throws Exception {
+    public void selectModel (String model,long wait) throws Exception {
         click(models);
-        click(driver.findElement(By.xpath("//label[contains(text(),'"+model+"')]")),(" Car model clicked: "+model));
+        click(driver.findElement(By.xpath("//label[contains(text(),'"+model+"')]")),(" Car model clicked: "+model),wait);
     }
 
-    public void clickSearchButton() throws Exception {
-        click(searchButton," Search button clicked!");
+    public void clickSearchButton(long wait) throws Exception {
+        click(searchButton," Search button clicked!",wait);
     }
 
-    public void searchVehicles(String brand, String model) throws Exception {
-        selectBrand(brand);
-        selectModel(model);
-        clickSearchButton();
+    public void searchVehicles(String brand, String model, long wait) throws Exception {
+        selectBrand(brand,wait);
+        selectModel(model,wait);
+        clickSearchButton(wait);
     }
 }
